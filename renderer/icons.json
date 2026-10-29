@@ -1,0 +1,27 @@
+{
+  "_note": "아이콘 대응표 — 렌더러·사이트·검증·AI 추출이 모두 이 파일을 기준으로 한다. 파일은 assets/<file>.png",
+  "ghs": {
+    "flame":     {"file": "ghs_201",   "code": "GHS02", "en": "Flame",              "ko": "불꽃",          "src": "별표6 201"},
+    "oxidizer":  {"file": "ghs_202",   "code": "GHS03", "en": "Flame over circle",  "ko": "원 위의 불꽃",   "src": "별표6 202"},
+    "explosive": {"file": "ghs_203",   "code": "GHS01", "en": "Exploding bomb",     "ko": "폭발하는 폭탄",   "src": "별표6 203"},
+    "skull":     {"file": "ghs_204",   "code": "GHS06", "en": "Skull and crossbones","ko": "해골과 X자 뼈",  "src": "별표6 204"},
+    "corrosion": {"file": "ghs_205",   "code": "GHS05", "en": "Corrosion",          "ko": "부식성",        "src": "별표6 205"},
+    "health":    {"file": "ghs_214",   "code": "GHS08", "en": "Health hazard",      "ko": "건강유해성",     "src": "별표6 214"},
+    "excl":      {"file": "ghs_GHS07", "code": "GHS07", "en": "Exclamation mark",   "ko": "느낌표",        "src": "GHS 표 이미지 트레이싱 (OSHA 원본으로 교체 예정)"}
+  },
+  "ghs_missing": {"gas": "GHS04 가스 실린더", "environment": "GHS09 환경"},
+  "signs": {
+    "goggles":      {"file": "301",  "en": "Goggles",           "ko": "보안경",     "src": "별표6 301"},
+    "mask":         {"file": "302",  "en": "Gas mask",          "ko": "방독마스크",  "src": "별표6 302"},
+    "face":         {"file": "304",  "en": "Face shield",       "ko": "보안면",     "src": "별표6 304"},
+    "gloves":       {"file": "308",  "en": "Gloves",            "ko": "안전장갑",    "src": "별표6 308"},
+    "coat":         {"file": "309",  "en": "Clothing",          "ko": "안전복",     "src": "별표6 309"},
+    "nofire":       {"file": "107",  "en": "No open flames",    "ko": "화기금지",    "src": "별표6 107"},
+    "nosmoke":      {"file": "106",  "en": "No smoking",        "ko": "금연",       "src": "별표6 106"},
+    "firstaid":     {"file": "402",  "en": "First aid",         "ko": "응급구호",    "src": "별표6 402"},
+    "eyewash":      {"file": "404",  "en": "Eyewash",           "ko": "세안장치",    "src": "별표6 404"},
+    "ground":       {"file": "M005", "en": "Ground",            "ko": "접지",       "src": "ISO 7010 M005"},
+    "shower":       {"file": "E012", "en": "Safety shower",     "ko": "비상샤워",    "src": "ISO 7010 E012"},
+    "extinguisher": {"file": "F001", "en": "Fire extinguisher", "ko": "소화기",     "src": "ISO 7010 F001"}
+  }
+}

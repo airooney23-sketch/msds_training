@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "id": "acetone",
+  "name_en": "Acetone",
+  "name_ko": "아세톤",
+  "cas": "67-64-1",
+  "signal_word": "Danger",
+  "pictograms": [
+    "flame",
+    "excl"
+  ],
+  "msds": {
+    "supplier": "SK chemicals Daejung",
+    "doc_no": "AA04815-0000000003",
+    "revision_date": "2021-09-01",
+    "language": "ko",
+    "file": ""
+  },
+  "source_line": "MSDS AA04815-0000000003 · rev. 2021-09-01 · SK chemicals Daejung",
+  "label": {
+    "pictos": [
+      "flame",
+      "excl"
+    ],
+    "h": "H225 Highly flammable liquid and vapour",
+    "p": "P210 Keep away from heat, sparks, open flames",
+    "sup": "SK chemicals Daejung · ☎ 02-2008-2757"
+  },
+  "review": {
+    "status": "approved",
+    "reviewer": "",
+    "approved_at": "2026-10-29",
+    "notes": []
+  },
+  "sections": [
+    {
+      "item": 1,
+      "kind": "title",
+      "pictos": [
+        "flame",
+        "excl"
+      ],
+      "lines": [
+        {
+          "en": "Today's chemical is acetone, CAS number 67-64-1.",
+          "ko": "오늘 교육할 물질은 아세톤, CAS 번호 67-64-1입니다.",
+          "tts": "Today's chemical is acetone. C A S number, six seven, six four, one."
+        }
+      ]
+    },
+    {
+      "item": 2,
+      "kind": "phys",
+      "en": "Physical Hazards",
+      "ko": "물리적 위험성",
+      "picto": "flame",
+      "fact": {
+        "en": "Flash point  −17 °C",
+        "ko": "인화점 −17 °C"
+      },
+      "lines": [
+        {
+          "en": "Acetone is highly flammable and can ignite even at minus 17 degrees Celsius.",
+          "ko": "아세톤은 고인화성으로, 영하 17도에서도 불이 붙을 수 있습니다."
+        },
+        {
+          "en": "Its heavy vapor can travel to a spark and flash back.",
+          "ko": "무거운 증기가 점화원까지 이동해 역화할 수 있습니다."
+        }
+      ]
+    },
+    {
+      "item": 2,
+      "kind": "health",
+      "en": "Health Hazards",
+      "ko": "건강 유해성",
+      "picto": "excl",
+      "fact": {
+        "en": "Eyes · Dizziness · Drowsiness",
+        "ko": "눈 자극 · 현기증 · 졸음"
+      },
+      "lines": [
+        {
+          "en": "It causes serious eye irritation, and breathing the vapor may make you dizzy or drowsy.",
+          "ko": "눈에 심한 자극을 주며, 증기를 마시면 어지럽거나 졸릴 수 있습니다."
+        }
+      ]
+    },
+    {
+      "item": 3,
+      "kind": "handle",
+      "fact": {
+        "en": "No ignition · Ground · Ventilate",
+        "ko": "점화원 금지 · 접지 · 환기"
+      },
+      "lines": [
+        {
+          "en": "Keep away from heat, sparks and flames. Ground containers and use non-sparking tools.",
+          "ko": "열, 스파크, 화염을 멀리하고, 용기는 접지하며 스파크 없는 공구를 쓰십시오."
+        },
+        {
+          "en": "Work with good ventilation, and store it sealed in a cool, locked area.",
+          "ko": "환기되는 곳에서 작업하고, 서늘한 잠금 장소에 밀폐 보관하십시오."
+        }
+      ]
+    },
+    {
+      "item": 4,
+      "kind": "ppe",
+      "ppe": [
+        "goggles",
+        "face",
+        "gloves",
+        "coat",
+        "mask"
+      ],
+      "lines": [
+        {
+          "en": "Wear goggles and a face shield, chemical-resistant gloves and protective clothing.",
+          "ko": "보안경과 보안면, 내화학 장갑, 보호복을 착용하십시오."
+        },
+        {
+          "en": "If ventilation is poor, wear a gas mask with the right cartridge.",
+          "ko": "환기가 불충분하면 적합한 정화통을 장착한 방독마스크를 쓰십시오."
+        }
+      ]
+    },
+    {
+      "item": 5,
+      "kind": "aid",
+      "fact": {
+        "en": "Eyes: rinse 20+ min",
+        "ko": "눈: 20분 이상 세척"
+      },
+      "lines": [
+        {
+          "en": "Eyes: rinse with running water for 20 minutes. Skin: wash with soap and water. Inhaled: get fresh air.",
+          "ko": "눈은 흐르는 물로 20분 이상, 피부는 비누와 물로 씻고, 흡입 시 신선한 공기로 옮기십시오."
+        }
+      ]
+    },
+    {
+      "item": 5,
+      "kind": "accident",
+      "fact": {
+        "en": "Fire: CO2 · Dry chemical · Foam",
+        "ko": "화재: CO2 · 분말 · 포말"
+      },
+      "lines": [
+        {
+          "en": "Spill: remove ignition sources and absorb with dry sand.",
+          "ko": "누출 시 점화원을 없애고 마른 모래로 흡수하십시오."
+        },
+        {
+          "en": "Fire: use CO2, dry chemical or foam. No direct water jet.",
+          "ko": "화재 시 CO2, 분말, 포말을 쓰고 직접 주수는 금지입니다.",
+          "tts": "Fire: use C O 2, dry chemical or foam. No direct water jet."
+        }
+      ]
+    },
+    {
+      "item": 6,
+      "kind": "label",
+      "lines": [
+        {
+          "en": "On the label, pictograms show the hazard type. The signal word Danger means serious risk.",
+          "ko": "경고표지의 그림문자는 위험 종류를, 신호어 '위험'은 심각한 위험을 뜻합니다."
+        },
+        {
+          "en": "Hazard statements explain the risk; precautionary statements tell you what to do.",
+          "ko": "유해·위험문구는 위험 내용을, 예방조치문구는 해야 할 행동을 알려줍니다."
+        }
+      ]
+    },
+    {
+      "item": 6,
+      "kind": "msds",
+      "lines": [
+        {
+          "en": "The full MSDS has 16 sections. Check it at your workplace before handling.",
+          "ko": "MSDS는 16개 항목입니다. 취급 전 작업장에 비치된 MSDS를 확인하십시오."
+        }
+      ]
+    }
+  ]
+}

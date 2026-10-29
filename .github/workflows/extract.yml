@@ -1,0 +1,78 @@
+# MSDS PDF 업로드 → Claude API로 교육 데이터 초안 생성 → 검수 요청(Pull Request) 자동 생성
+# 저장소 Secrets 에 ANTHROPIC_API_KEY 가 없으면 아무것도 하지 않고 종료한다 (키 등록 전 상태).
+name: Extract MSDS → draft PR
+
+on:
+  push:
+    branches: [main]
+    paths: ["msds/**.pdf"]
+  workflow_dispatch:
+    inputs:
+      files:
+        description: "다시 추출할 PDF 경로 (공백 구분, 예: msds/acetone.pdf)"
+        required: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL || 'claude-sonnet-5-5' }}
+    steps:
+      - name: Check API key
+        id: key
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "ANTHROPIC_API_KEY 미등록 — 추출 건너뜀"; echo "ok=false" >> $GITHUB_OUTPUT
+          else echo "ok=true" >> $GITHUB_OUTPUT; fi
+
+      - uses: actions/checkout@v4
+        if: steps.key.outputs.ok == 'true'
+        with: { fetch-depth: 2 }
+
+      - name: Find new or changed PDFs
+        if: steps.key.outputs.ok == 'true'
+        id: files
+        run: |
+          if [ -n "${{ inputs.files }}" ]; then f="${{ inputs.files }}"
+          else f=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- 'msds/*.pdf' | tr '\n' ' '); fi
+          echo "list=$f" >> $GITHUB_OUTPUT; echo "대상: $f"
+
+      - uses: actions/setup-python@v5
+        if: steps.key.outputs.ok == 'true' && steps.files.outputs.list != ''
+        with: { python-version: "3.12" }
+
+      - name: Extract with Claude
+        if: steps.key.outputs.ok == 'true' && steps.files.outputs.list != ''
+        run: |
+          pip install -q anthropic
+          SUMMARY_FILE=summary.md python3 scripts/extract.py ${{ steps.files.outputs.list }}
+
+      - name: Open review PR
+        if: steps.key.outputs.ok == 'true' && steps.files.outputs.list != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          branch="draft/msds-$(date +%Y%m%d-%H%M%S)"
+          git config user.name  "msds-bot"
+          git config user.email "msds-bot@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add data
+          git commit -m "draft: MSDS 교육 데이터 초안"
+          git push -u origin "$branch"
+          {
+            echo "## MSDS 교육 데이터 초안 (AI 생성 · 검수 필요)"
+            echo
+            cat summary.md
+            echo
+            echo "### 검수 방법"
+            echo "1. **Files changed** 탭에서 JSON을 원문 MSDS와 대조합니다. 각 문장의 \`src\`가 출처 항목입니다."
+            echo "2. \`review.notes\`의 [검증 오류]·MSDS 원문 오류 지적을 확인하고 필요하면 수정합니다."
+            echo "3. 이상이 없으면 파일에서 \`\"status\": \"pending\"\` → \`\"approved\"\`, \`reviewer\`·\`approved_at\` 을 채워 커밋합니다."
+            echo "4. **Merge** 하면 영상이 자동 렌더·배포됩니다. (status가 approved가 아니면 렌더되지 않습니다)"
+          } > body.md
+          gh pr create --title "MSDS 교육 데이터 초안 $(date +%Y-%m-%d)" --body-file body.md --base main --head "$branch"

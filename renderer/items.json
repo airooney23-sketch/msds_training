@@ -1,0 +1,26 @@
+{
+  "1": {
+    "en": "Chemical Name",
+    "ko": "대상 화학물질 명칭"
+  },
+  "2": {
+    "en": "Hazards",
+    "ko": "물리적 위험성 · 건강 유해성"
+  },
+  "3": {
+    "en": "Handling Precautions",
+    "ko": "취급상의 주의사항"
+  },
+  "4": {
+    "en": "Protective Equipment",
+    "ko": "적절한 보호구"
+  },
+  "5": {
+    "en": "First Aid & Emergency",
+    "ko": "응급조치 · 사고 시 대처"
+  },
+  "6": {
+    "en": "Reading MSDS & Labels",
+    "ko": "MSDS · 경고표지 이해"
+  }
+}
